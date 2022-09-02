@@ -1,2 +1,2 @@
 #!/bin/bash
-/bin/ls sudo ln -s __ls__
+ln -s /bin/ls __ls__
