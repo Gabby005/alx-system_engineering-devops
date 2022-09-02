@@ -1,2 +1,4 @@
 #!/bin/bash
-cd ./0x00-shell_basics
+Write a script that changes the working directory
+
+ to the previous one
