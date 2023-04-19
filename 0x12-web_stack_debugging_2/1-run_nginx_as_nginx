@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
-# Fixes a web server to run Nginx as the nginx user listening on port 8080.
-sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
-sed -i "s/80/8080/g" /etc/nginx/sites-available/default
-chmod 644 /etc/nginx/nginx.conf
-pkill apache2
-sudo -u nginx service nginx start
+# run nginx s nginx user
+# nginx must be listening on all active IPS on port 8080
+# you cannot use apt-get remove
+# this script configures the container to fit the above requirements
+
+file='/etc/nginx/sites-available/default'
+
+# kill apache2 server
+pkill -f apache2
+
+chmod 777 /etc/nginx/nginx.conf
+
+# update listening ports
+sed -i 's/80/8080/g' $file
+
+# restart nginx as nginx
+sudo -u nginx service nginx restart
