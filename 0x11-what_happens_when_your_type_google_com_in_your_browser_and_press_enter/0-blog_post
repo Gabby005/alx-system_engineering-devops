@@ -1,0 +1,21 @@
+
+
+When you enter a URL in your browser, several complex steps are involved before the webpage is displayed on your screen. The process is called HTTP request/response cycle, which involves several layers of networking protocols and technologies.
+
+Here are the steps involved in detail:
+
+1. DNS Lookup: The browser first checks the DNS cache to see if the IP address of the website is already known. If not, it sends a request to the local DNS server to translate the domain name into an IP address. If the DNS server doesn't have the IP address cached, it will recursively search the DNS hierarchy to find the IP address.
+
+2. TCP/IP Connection: Once the IP address is obtained, the browser initiates a TCP/IP connection with the web server. This involves a three-way handshake, in which the browser sends a SYN packet, the server responds with a SYN-ACK packet, and the browser sends an ACK packet to establish a connection.
+
+3. HTTP Request: After the connection is established, the browser sends an HTTP request to the server, specifying the URL and the HTTP method (GET, POST, PUT, etc.). The request also includes various headers, such as the user agent, the referer, and the accepted content types.
+
+4. Server Processing: Upon receiving the request, the server processes it by searching for the requested resource, authenticating the user, and executing any server-side scripts or programs. If the resource is found, the server sends an HTTP response back to the browser.
+
+5. HTTP Response: The HTTP response contains various information, such as the status code, the content type, and the content length. If the status code is 200 (OK), the response also includes the requested resource, such as an HTML page, an image, or a file.
+
+6. Rendering: Once the browser receives the response, it parses the HTML code, retrieves any external resources, such as CSS files, JavaScript files, and images, and renders the webpage on the screen. This involves a complex process of layout, rendering, and painting, which can take several milliseconds or seconds depending on the complexity of the page.
+
+7. Connection Termination: After the webpage is rendered, the browser may keep the TCP/IP connection open for a while to fetch any additional resources, such as AJAX requests, or it may close the connection to free up resources.
+
+Overall, hitting a URL in the browser involves a complex process of networking protocols, including DNS, TCP/IP, and HTTP, as well as rendering and layout engines, which work together to deliver a seamless web browsing experience to the user.
